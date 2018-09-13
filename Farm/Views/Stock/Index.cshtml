@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Farm.Models.Entities.StockDTO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Stock Items</h2>
+
+<p>
+    @Html.ActionLink("Create New stock Item", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Fruit
+        </th>
+        <th>
+            Variety
+        </th>
+        <th>
+            Qty
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StockItemId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fruit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Variety)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.StockItemId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.StockItemId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.StockItemId })
+        </td>
+    </tr>
+}
+
+</table>

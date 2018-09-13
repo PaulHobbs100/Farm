@@ -6,6 +6,8 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Data.Entity;
+using Farm.Models.Context;
 
 namespace Farm
 {
@@ -18,6 +20,13 @@ namespace Farm
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            
+            //Entity framework Initialization
+            Database.SetInitializer(new FarmDatabaseInitializer());
+
+            //Log4net Initialization
+            log4net.Config.XmlConfigurator.Configure();
+
         }
     }
 }
