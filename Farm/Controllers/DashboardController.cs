@@ -64,12 +64,14 @@ namespace Farm.Controllers
                 return HttpNotFound();
             }
             return View(batch);
+
+
         }
 
         // GET: Dashboard/Create
         public ActionResult Create()
         {
-            ViewBag.StockItemId2 = new SelectList(db.StockItems, "StockItemId", "Fruit","variety");
+            ViewBag.StockItemId = new SelectList(db.StockItems, "StockItemId", "Fruit", "variety, batch.StockItemId");
             ViewBag.Plants = db.StockItems.ToList();
             return View();
         }
@@ -79,16 +81,18 @@ namespace Farm.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StockItemId,Quantity")] Batch batch)
+        public ActionResult Create([Bind(Include = "BatchId,StockItemId,Quantity")] Batch batch)
         {
             if (ModelState.IsValid)
             {
+
+               
                 db.Batches.Add(batch);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.StockItemId = new SelectList(db.StockItems, "StockItemId", "Fruit", batch.StockItemId);
+            ViewBag.StockItemId = new SelectList(db.StockItems, "StockItemId", "Fruit");
             return View(batch);
         }
 
@@ -124,7 +128,11 @@ namespace Farm.Controllers
             ViewBag.StockItemId = new SelectList(db.StockItems, "StockItemId", "Fruit", batch.StockItemId);
             return View(batch);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // GET: Dashboard/Delete/5
         public ActionResult Delete(int? id)
         {

@@ -14,6 +14,8 @@ namespace Farm.Models.Entities
     public string Fruit { get; set; }
     public string Variety { get; set; }
     public int Quantity { get; set; }
+        //
+    public int StockListId { get; set; }//
 
         public static explicit operator BatchlistDTO(List<BatchlistDTO> v)
         {

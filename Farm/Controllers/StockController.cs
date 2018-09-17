@@ -26,7 +26,7 @@ namespace Farm.Controllers
                             group  Batch by new { Batch.StockItemId, StockItem.Fruit, StockItem.Variety }
                             into G
                             let tots =G.Sum(m=>m.Quantity)
-                                                  
+                                                 
                             select new StockDTO
                             {
                                 StockItemId = G.Key.StockItemId,

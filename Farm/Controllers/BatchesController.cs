@@ -39,7 +39,8 @@ namespace Farm.Controllers
                                     BatchId=    Batch.BatchId,
                                     Fruit=   StockItem.Fruit,
                                     Variety= StockItem.Variety,
-                                    Quantity=  Batch.Quantity
+                                    Quantity=  Batch.Quantity,
+                                    StockListId =StockItem.StockItemId
 
                                 };
 
@@ -67,7 +68,7 @@ namespace Farm.Controllers
         /// <param name="id"></param>
         /// <returns>All Batches</returns>
      
-        [ResponseType(typeof(Batch))]
+        [ResponseType(typeof(BatchlistDTO))]
         public IHttpActionResult GetBatch(int id)
         {
             var batchitem = from Batch in db.Batches

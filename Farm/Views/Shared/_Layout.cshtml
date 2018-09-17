@@ -8,10 +8,10 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-light navbar-fixed-top " style="background-color:#e3f3fd">
+    <div class="navbar navbar-light navbar-expand-sm  fixed-top " style="background-color:#e3f3fd">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle " data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar bg-success"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -22,19 +22,21 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     
-                    <li>@Html.ActionLink("Batches", "Index", "Dashboard")</li>
-                    <li>@Html.ActionLink("Stocks", "Index", "Stock")</li>
+                    <li class="nav-item">@Html.ActionLink(" Batches ", "Index", "Dashboard")</li>
+                    <li  class="nav-item">@Html.ActionLink(" Stocks ", "Index", "Stock")</li>
 
-                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
+                    <li  class="nav-item">@Html.ActionLink(" API ", "Index", "Help", new { area = "" }, null)</li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container body-content"style="padding-top:50px">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Winterwood Farm: Stock Management System Prototype</p>
+            <div class="navbar navbar-light fixed-bottom " style="background-color:#e3f3fd">
+                <p>&copy; @DateTime.Now.Year - Winterwood Farm: Stock Management System Prototype</p>
+                </div>
         </footer>
     </div>
 

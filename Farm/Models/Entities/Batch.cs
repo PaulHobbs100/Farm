@@ -2,6 +2,9 @@
 
 namespace Farm.Models.Entities
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Batch
     {
         [Key]

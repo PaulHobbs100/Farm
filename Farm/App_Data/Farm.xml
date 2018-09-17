@@ -516,6 +516,13 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:Farm.Controllers.DashboardController.Delete(System.Nullable{System.Int32})">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="M:Farm.Controllers.StockItemsController.GetStockItems">
             <summary>
             Get all stock items
@@ -550,6 +557,11 @@
             </summary>
             <param name="id"></param>
             <returns></returns>
+        </member>
+        <member name="T:Farm.Models.Entities.Batch">
+            <summary>
+            
+            </summary>
         </member>
     </members>
 </doc>
